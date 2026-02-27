@@ -3,36 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Do You Love Me Emma?</title>
+    <title>Love Proposal</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f9f9f9; }
-        .container { text-align: center; padding: 50px; }
-        .cat { animation: bounce 1s infinite; }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .heart { color: red; font-size: 50px; }
+        body { font-family: Arial, sans-serif; }
+        /* Add all necessary CSS animations */
+        .bobble { animation: bobble 2s infinite; }
+        .shakePanic { animation: shakePanic 0.5s; }
+        .crySpin { animation: crySpin 1s; }
+        .dramaDrop { animation: dramaDrop 1s; }
+        .heartbreak { animation: heartbreak 1s forwards; }
+        .jumpJoy { animation: jumpJoy 1s forwards; }
+        .floatUp { animation: floatUp 1s forwards; }
+        /* Keyframes for animations */
+        @keyframes bobble { /* Add bobble keyframes */ }
+        @keyframes shakePanic { /* Add shake panic keyframes */ }
+        @keyframes crySpin { /* Add cry spin keyframes */ }
+        @keyframes dramaDrop { /* Add drama drop keyframes */ }
+        @keyframes heartbreak { /* Add heartbreak keyframes */ }
+        @keyframes jumpJoy { /* Add jump joy keyframes */ }
+        @keyframes floatUp { /* Add float up keyframes */ }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Do You Love Me, Emma?</h1>
-        <img src="cat.png" alt="Cat Character" class="cat">
-        <p class="heart">❤️</p>
-        <button onclick="showProposal()">Click me!</button>
-        <div id="proposal" style="display:none;">
-            <h2>I Love You!</h2>
-            <p>Will you marry me?</p>
-            <button onclick="celebrate()">Yes!</button>
-        </div>
-    </div>
+    <h1>Will You Be My Valentine?</h1>
+    <div id="heart-container"></div>
+    <button id="yes-button">YES</button>
+    <button id="no-button">NO</button>
     <script>
-        function showProposal() {
-            document.getElementById('proposal').style.display = 'block';
-            // Add animations, confetti, and additional interactive features here
-        }
+        // JavaScript code for animations and event handlers
+        document.getElementById('yes-button').addEventListener('click', function() {
+            celebrate();
+        });
+        document.getElementById('no-button').addEventListener('click', function() {
+            // NO button has no escape logic
+        });
         function celebrate() {
-            // Trigger confetti and animations
-            alert('Yay! ❤️ Congratulations!');
+            // Celebration effects for YES button
+            for (let i = 0; i < 10; i++) {
+                spawnHearts();
+            }
+        }
+        function spawnHearts() {
+            // Logic for spawning heart emojis
         }
     </script>
 </body>
