@@ -1,47 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Love Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Do You Love Me Emma?</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #fdfdfd; }
-        .container { width: 80%; margin: auto; padding: 20px; }
-        img { max-width: 100%; height: auto; }
-        .error { color: red; }
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; }
+        .container { text-align: center; padding: 50px; }
+        .cat { animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .heart { color: red; font-size: 50px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 id="main-title">My Love</h1>
-        <img src="image1.jpg" alt="Description of Image 1">
-        <img src="image2.jpg" alt="Description of Image 2">
-        <script>
-            // Configuration variables
-            const config = {
-                theme: 'light',
-                animationDuration: 500,
-                apiEndpoint: 'https://api.example.com'
-            };
-
-            // Error handling utility
-            function handleError(error) {
-                const errorDiv = document.createElement('div');
-                errorDiv.className = 'error';
-                errorDiv.textContent = error;
-                document.body.appendChild(errorDiv);
-            }
-
-            // Main function
-            function init() {
-                try {
-                    // Code that might throw an error
-                    console.log('Initializing...');
-                    // Any other initialization code
-                } catch (error) {
-                    handleError('Initialization failed: ' + error);
-                }
-            }
-
-            init();
-        </script>
+        <h1>Do You Love Me, Emma?</h1>
+        <img src="cat.png" alt="Cat Character" class="cat">
+        <p class="heart">❤️</p>
+        <button onclick="showProposal()">Click me!</button>
+        <div id="proposal" style="display:none;">
+            <h2>I Love You!</h2>
+            <p>Will you marry me?</p>
+            <button onclick="celebrate()">Yes!</button>
+        </div>
     </div>
+    <script>
+        function showProposal() {
+            document.getElementById('proposal').style.display = 'block';
+            // Add animations, confetti, and additional interactive features here
+        }
+        function celebrate() {
+            // Trigger confetti and animations
+            alert('Yay! ❤️ Congratulations!');
+        }
+    </script>
 </body>
 </html>
